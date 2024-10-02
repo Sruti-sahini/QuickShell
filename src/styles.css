@@ -56,16 +56,20 @@ h1 {
 
 .kanban-card h3 {
     margin: 0;
-    font-size: 16px;
+    font-size: 11px;
     font-weight: normal;
     color: #999;
 }
 
 .kanban-card h4 {
     margin: 5px 0;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
+    word-wrap: break-word;
     color: #333;
+    white-space: nowrap; /* Prevents wrapping to the next line */
+    overflow: hidden; /* Hides the overflowing content */
+    text-overflow: ellipsis; /* Displays "..." when the content overflows */
 }
 
 .kanban-card h7 {
@@ -75,7 +79,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-.kanban-card .tag-container {
+/* .kanban-card .tag-container {
     display: flex;
     align-items: center;
     margin-top: 10px;
@@ -88,9 +92,39 @@ h1 {
 }
 
 .kanban-card .tag-text {
-    font-size: 14px;
+    font-size: 11px;
     color: #555;
+    border: 1px solid #666;
+    padding: 2px;
+    border-radius: 5px;
+} */
+
+.kanban-card .tag-container {
+    display: flex;
+    align-items: center; /* Aligns the icon and text vertically */
+    justify-content: flex-start; /* Aligns them horizontally, starting from the left */
+    gap: 5px; /* Adds some spacing between the icon and the text */
+    margin-top: 10px;
 }
+
+.kanban-card .tag-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain; /* Ensures the icon scales correctly */
+}
+
+.kanban-card .tag-text {
+    font-size: 12px; /* Adjusted font size */
+    color: #555;
+    padding: 2px 5px; /* Adds padding around the text */
+    border-radius: 5px;
+    white-space: nowrap; /* Prevents text from breaking into multiple lines */
+    display: inline-block;
+    border : 2px solid #acaaaa;
+    border-radius: 5px;
+}
+
+
 
 .priority {
     font-size: 12px;
@@ -194,7 +228,7 @@ h1 {
 }
 
 .ticket-count {
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #666;
     margin-left: 20px;
     margin-right: 20px;
@@ -217,13 +251,13 @@ h1 {
 
 .column-name {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 14px;
     margin-right: auto;
 }
 
 .icon {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     margin-right: 10px;
 }
 
@@ -238,20 +272,25 @@ h1 {
     position: absolute;
     top: 5px;
     right: 5px;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
 }
 
 .status-icon {
-    width: 16px;
-    height: 16px;
+    width: 11px;
+    height: 11px;
     margin-right: 5px;
 }
 
 .priority-icon {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     margin-right: 5px;
+    margin-top: 5px;
+    /* border: 2px solid #aca6a6; */
+    padding: 2px;
+    box-shadow: grey;
+    /* border-radius: 5px; */
 }
 
 .tag-container {
