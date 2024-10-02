@@ -258,3 +258,25 @@ h1 {
     display: flex;
     flex-wrap: wrap;
 }
+
+/* Media query for small devices (1 column) */
+@media (max-width: 480px) {
+    .kanban-board {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .kanban-column {
+        max-width: 100%;
+        flex-basis: 100%;
+        min-width: 100%;
+    }
+
+    .kanban-card {
+        margin: 5px 0;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
