@@ -24,8 +24,8 @@ const Navbar = ({ groupBy, setGroupBy, sortBy, setSortBy }) => {
       {showDropdown && (
         <div className="dropdown">
           <div className="dropdown-item">
-            <label className="dropdown-label">Group by: </label>
-            <select onChange={handleGroupChange} value={groupBy}>
+            <label className="dropdown-label">Grouping: </label>
+            <select className="grouping" onChange={handleGroupChange} value={groupBy}>
               <option value="status">Status</option>
               <option value="user">User</option>
               <option value="priority">Priority</option>
@@ -33,8 +33,8 @@ const Navbar = ({ groupBy, setGroupBy, sortBy, setSortBy }) => {
           </div>
 
           <div className="dropdown-item">
-            <label className="dropdown-label">Sort by: </label>
-            <select onChange={handleSortChange} value={sortBy}>
+            <label className="dropdown-label">Sorting: </label>
+            <select classMName="sorting" onChange={handleSortChange} value={sortBy}>
               <option value="priority">Priority</option>
               <option value="title">Title</option>
             </select>
