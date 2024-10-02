@@ -1,0 +1,260 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: #F6F6FC; /* Lightish blue background color */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-width: 100vw; /* Ensure controls fit within viewport width */
+    overflow-x: auto; /* If controls overflow, make them scrollable */
+}
+
+.controls label {
+    font-weight: bold;
+}
+
+.kanban-board {
+    display: flex;
+    justify-content: space-between; /* Spread columns evenly across the screen */
+    padding: 10px;
+    gap: 20px;
+    max-width: 100%; /* Fit the board within the screen */
+    box-sizing: border-box;
+}
+
+.kanban-column {
+    flex: 1; /* Make each column take up an equal portion of the available width */
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    max-width: calc(100% / 5 - 20px); /* 5 columns with 20px gap */
+    min-width: 250px; /* Set minimum width to avoid shrinking too much */
+    background-color: transparent; /* No background color for the column */
+}
+
+.kanban-card {
+    background-color: white; /* White cards */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.kanban-card h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    color: #999;
+}
+
+.kanban-card h4 {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.kanban-card h7 {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.kanban-card .tag-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.kanban-card .tag-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}
+
+.kanban-card .tag-text {
+    font-size: 14px;
+    color: #555;
+}
+
+.priority {
+    font-size: 12px;
+    color: gray;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Media query to handle screens that are smaller, with 3 columns */
+@media (max-width: 1200px) {
+    .kanban-column {
+        max-width: calc(100% / 3 - 20px); /* Adjust to 3 columns */
+    }
+}
+
+/* Media query to handle smaller screens, with 2 columns */
+@media (max-width: 768px) {
+    .kanban-column {
+        max-width: calc(100% / 2 - 20px); /* Adjust to 2 columns */
+    }
+}
+
+/* Media query to handle the smallest screens, with 1 column */
+@media (max-width: 480px) {
+    .kanban-column {
+        max-width: 100%; /* One column on small screens */
+        min-width: 100%;
+    }
+}
+
+.dropdown-container {
+    display: inline;
+}
+
+.display-button {
+    background-color: white;
+    color: grey;
+    border: 1px solid #e1e1e1;
+    padding: 10px 20px;
+    text-align: left;
+    display: inline-block;
+    width: auto;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.group-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+}
+
+.dropdown {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+    display: inline-block;
+}
+
+.dropdown-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
+
+.dropdown-item select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.tag-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.ticket-count {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.add-icon, .more-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.column-name {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: auto;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.kanban-card {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+
+.user-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.status-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.priority-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+}
