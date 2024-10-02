@@ -17,7 +17,7 @@ const Navbar = ({ groupBy, setGroupBy, sortBy, setSortBy }) => {
   return (
     <nav style={{ width: '100%', padding: '10px', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', backgroundColor: 'white', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
       <button className="display-button" onClick={() => setShowDropdown(!showDropdown)}>
-        <img src="/icons/display.png" alt="Display Icon" className="icon" />
+        <img src="/icons/Display.png" alt="Display Icon" className="icon" />
         Display
       </button>
 
